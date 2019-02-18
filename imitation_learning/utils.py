@@ -85,7 +85,7 @@ class Dataset(data.Dataset):
         Y = self.Y[index]
         return X, Y
 
-def train_model(policy, training_data, num_epochs = 300):
+def train_model(policy, training_data, num_epochs = 1000):
     '''
     Given a dict of training data, train a policy network
     using supervised learning.
@@ -95,7 +95,7 @@ def train_model(policy, training_data, num_epochs = 300):
     dataset = Dataset(training_data['observations'], training_data['actions'])
     dataloader = data.DataLoader(dataset, batch_size = 128)
     
-    optimizer = optim.Adam(policy.parameters(), lr=1e-3)
+    optimizer = optim.Adam(policy.parameters(), lr=3e-3)
     mse = nn.MSELoss()
     for ne in range(num_epochs):
         for obs, act in dataloader:
