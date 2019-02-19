@@ -8,4 +8,4 @@ You'll train a humanoid runner that can run towards targers, and recover from fa
 
 ### Results
 
-![](/flagrun_adv_fallover.gif)
+![](flagrun_adv_fallover.gif)
