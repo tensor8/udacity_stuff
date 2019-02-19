@@ -42,12 +42,13 @@ def rollout_for_one_episode(policy, env,  render=True):
         if not done: continue
         if restart_delay==0:
             print("score=%0.2f in %i frames" % (score, frame))
+            rollout_data['score'].append(score)
             if still_open!=True:      # not True in multiplayer or non-Roboschool environment
                 break
             restart_delay = 60*2  # 2 sec at 60 fps
         restart_delay -= 1
         if restart_delay==0: break
-    rollout_data['score'].append(score)
+    
     return rollout_data
 
 
@@ -85,6 +86,7 @@ class Dataset(data.Dataset):
         Y = self.Y[index]
         return X, Y
 
+    
 def train_model(policy, training_data, num_epochs = 1000):
     '''
     Given a dict of training data, train a policy network
@@ -93,9 +95,9 @@ def train_model(policy, training_data, num_epochs = 1000):
     '''
     
     dataset = Dataset(training_data['observations'], training_data['actions'])
-    dataloader = data.DataLoader(dataset, batch_size = 128)
+    dataloader = data.DataLoader(dataset, batch_size = 16)
     
-    optimizer = optim.Adam(policy.parameters(), lr=3e-3)
+    optimizer = optim.Adam(policy.parameters(), lr=1e-3)
     mse = nn.MSELoss()
     for ne in range(num_epochs):
         for obs, act in dataloader:
