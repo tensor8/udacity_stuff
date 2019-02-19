@@ -1,7 +1,3 @@
-## Hello
-
-
-
 # Imitation Learning Techniques
 
 ### Instructions
