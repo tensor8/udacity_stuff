@@ -20,6 +20,6 @@ You'll train a humanoid runner to mimic an expert demonstrator, producing an age
 
 ### Results
 
-You'll end up with a trained student policy that can recover from its mistakes! You'll be able to knock the humanoid runner over, and watch it get back up.
+You'll end up with a trained student policy that can recover from its mistakes!
 
 ![](flagrun_adv_fallover.gif)
