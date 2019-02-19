@@ -8,7 +8,7 @@
 
 You'll train a humanoid runner to mimic an expert demonstrator, producing an agent that can run towards targets, and get up after falling over.
 
-** You can run this notebook on a laptop CPU -- no GPU needed!**
+**You can run this notebook on a laptop CPU -- no GPU needed!**
 
 ### Results
 
