@@ -2,9 +2,9 @@
 
 ### Instructions
 
-Install pybullet with `pip install pybullet`
+- Install pybullet with `pip install pybullet`
 
-Open `Behavioural Cloning and Dagger.ipynb` to see an implementation of behavioural cloning and DAGGER with pybullet gym's Humanoid Flagrun environment.
+- Open `Behavioural Cloning and Dagger.ipynb` to see an implementation of behavioural cloning and DAGGER with pybullet gym's Humanoid Flagrun environment.
 
 You'll train a humanoid runner that can run towards targers, and recover from falling over.
 
